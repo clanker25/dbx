@@ -1,0 +1,33 @@
+schemaVersion: 1
+order: 650
+dbType: tdengine
+compareModes: [schema, data]
+rustVariant: Tdengine
+label: TDengine
+runtimeMode: agent
+mcpMode: bridge
+agentKey: tdengine
+driverStoreVisible: false
+driverStoreOrder: 36
+singleConnectionPool: false
+metadataConnectionScoped: false
+skipTcpProbe: true
+defaultPort: 6041
+supportLevel: operate
+capabilities:
+  queryExecution: false
+  metadataBrowse: false
+  objectBrowser: true
+  objectSource: false
+  schemaSearch: true
+  diagram: false
+  tableDataEdit: true
+  tableStructureEdit: false
+  tableImport: true
+  dataTransfer: true
+  sqlFileExecution: true
+  databaseCreate: true
+  fieldLineage: false
+  sqlExplain: true
+  userAdmin: false
+  driverManagement: true

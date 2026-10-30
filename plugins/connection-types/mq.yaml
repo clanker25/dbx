@@ -1,0 +1,46 @@
+schemaVersion: 1
+order: 710
+dbType: mq
+rustVariant: MessageQueue
+label: Message Queue
+runtimeMode: native
+mcpMode: unsupported
+singleConnectionPool: false
+metadataConnectionScoped: true
+skipTcpProbe: true
+defaultPort: 8080
+formKind: mq
+driverProfiles:
+  - profile: kafka
+    label: Apache Kafka
+    agentKey: kafka
+    storeVisible: false
+    storeOrder: 44
+  - profile: rocketmq
+    label: Apache RocketMQ
+    agentKey: rocketmq
+    storeVisible: true
+    storeOrder: 45
+  - profile: rabbitmq
+    label: RabbitMQ
+    agentKey: rabbitmq
+    storeVisible: true
+    storeOrder: 47
+supportLevel: connect
+capabilities:
+  queryExecution: false
+  metadataBrowse: false
+  objectBrowser: true
+  objectSource: false
+  schemaSearch: false
+  diagram: false
+  tableDataEdit: true
+  tableStructureEdit: true
+  tableImport: false
+  dataTransfer: true
+  sqlFileExecution: false
+  databaseCreate: true
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: true

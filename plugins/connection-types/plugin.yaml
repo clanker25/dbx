@@ -1,0 +1,29 @@
+schemaVersion: 0
+order: 790
+dbType: plugin
+rustVariant: Plugin
+label: Plugin
+runtimeMode: external
+mcpMode: unsupported
+singleConnectionPool: false
+metadataConnectionScoped: false
+skipTcpProbe: true
+supportLevel: connect
+specializedSurface: true
+capabilities:
+  queryExecution: false
+  metadataBrowse: false
+  objectBrowser: true
+  objectSource: false
+  schemaSearch: true
+  diagram: false
+  tableDataEdit: false
+  tableStructureEdit: false
+  tableImport: true
+  dataTransfer: false
+  sqlFileExecution: false
+  databaseCreate: false
+  fieldLineage: false
+  sqlExplain: true
+  userAdmin: false
+  driverManagement: true

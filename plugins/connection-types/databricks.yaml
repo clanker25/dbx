@@ -1,0 +1,36 @@
+schemaVersion: 1
+order: 360
+dbType: databricks
+compareModes: [schema, data]
+rustVariant: Databricks
+label: Databricks SQL
+runtimeMode: agent
+mcpMode: bridge
+agentKey: databricks
+driverStoreVisible: true
+driverStoreOrder: 8
+singleConnectionPool: true
+metadataConnectionScoped: false
+skipTcpProbe: true
+defaultPort: 444
+traits:
+  schemaAware: true
+  treeSchema: true
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: true
+  objectSource: false
+  schemaSearch: true
+  diagram: true
+  tableDataEdit: true
+  tableStructureEdit: false
+  tableImport: false
+  dataTransfer: false
+  sqlFileExecution: false
+  databaseCreate: false
+  fieldLineage: true
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: true

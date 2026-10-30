@@ -1,0 +1,39 @@
+schemaVersion: 1
+order: 300
+dbType: vastbase
+compareModes: [schema, data]
+transferSupportLevel: best-effort
+rustVariant: Vastbase
+label: 海量 Vastbase
+dialect: Vastbase
+runtimeMode: agent
+mcpMode: bridge
+agentKey: vastbase
+driverStoreVisible: true
+driverStoreOrder: 6
+singleConnectionPool: true
+metadataConnectionScoped: false
+skipTcpProbe: false
+defaultPort: 5432
+traits:
+  schemaAware: true
+  treeSchema: true
+  pgVacuum: false
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: true
+  objectSource: true
+  schemaSearch: false
+  diagram: true
+  tableDataEdit: true
+  tableStructureEdit: true
+  tableImport: true
+  dataTransfer: true
+  sqlFileExecution: false
+  databaseCreate: true
+  fieldLineage: false
+  sqlExplain: true
+  userAdmin: true
+  driverManagement: false

@@ -1,0 +1,36 @@
+schemaVersion: 1
+order: 320
+dbType: databend
+compareModes: [schema, data]
+rustVariant: Databend
+label: Databend
+dialect: Databend
+runtimeMode: agent
+mcpMode: bridge
+agentKey: databend
+driverStoreVisible: true
+driverStoreOrder: 7
+singleConnectionPool: true
+metadataConnectionScoped: false
+skipTcpProbe: true
+defaultPort: 8000
+traits:
+  schemaAware: false
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: true
+  objectSource: false
+  schemaSearch: false
+  diagram: false
+  tableDataEdit: false
+  tableStructureEdit: false
+  tableImport: false
+  dataTransfer: true
+  sqlFileExecution: true
+  databaseCreate: false
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: true

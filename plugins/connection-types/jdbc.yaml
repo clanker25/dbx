@@ -1,0 +1,33 @@
+schemaVersion: 1
+order: 770
+dbType: jdbc
+rustVariant: Jdbc
+label: JDBC
+runtimeMode: external
+mcpMode: bridge
+singleConnectionPool: true
+metadataConnectionScoped: false
+skipTcpProbe: true
+formKind: jdbc
+traits:
+  schemaAware: true
+  treeSchema: false
+  databaseObjectTree: false
+supportLevel: browse
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: true
+  objectSource: false
+  schemaSearch: false
+  diagram: false
+  tableDataEdit: false
+  tableStructureEdit: false
+  tableImport: false
+  dataTransfer: true
+  sqlFileExecution: true
+  databaseCreate: true
+  fieldLineage: false
+  sqlExplain: true
+  userAdmin: false
+  driverManagement: false

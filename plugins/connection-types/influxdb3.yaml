@@ -1,0 +1,30 @@
+schemaVersion: 1
+order: 754
+dbType: influxdb3
+compareModes: [schema, data]
+rustVariant: InfluxDb3
+label: InfluxDB 3.x
+runtimeMode: native
+mcpMode: bridge
+singleConnectionPool: true
+metadataConnectionScoped: true
+skipTcpProbe: true
+defaultPort: 8181
+supportLevel: connect
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: true
+  objectSource: false
+  schemaSearch: false
+  diagram: true
+  tableDataEdit: false
+  tableStructureEdit: false
+  tableImport: false
+  dataTransfer: false
+  sqlFileExecution: true
+  databaseCreate: false
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: false

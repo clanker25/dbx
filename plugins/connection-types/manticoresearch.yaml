@@ -1,0 +1,31 @@
+schemaVersion: 0
+order: 240
+dbType: manticoresearch
+compareModes: [schema, data]
+rustVariant: ManticoreSearch
+label: Manticore Search
+dialect: ManticoreSearch
+runtimeMode: native
+mcpMode: direct
+singleConnectionPool: false
+metadataConnectionScoped: true
+skipTcpProbe: false
+defaultPort: 9305
+supportLevel: operate
+capabilities:
+  queryExecution: false
+  metadataBrowse: true
+  objectBrowser: false
+  objectSource: true
+  schemaSearch: false
+  diagram: true
+  tableDataEdit: false
+  tableStructureEdit: true
+  tableImport: false
+  dataTransfer: false
+  sqlFileExecution: true
+  databaseCreate: false
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: true

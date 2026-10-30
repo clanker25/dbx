@@ -1,0 +1,39 @@
+schemaVersion: 0
+order: 30
+dbType: sqlite
+compareModes: [schema, data]
+transferSupportLevel: verified
+rustVariant: Sqlite
+label: SQLite
+dialect: SQLite
+runtimeMode: file
+mcpMode: direct
+singleConnectionPool: false
+metadataConnectionScoped: false
+skipTcpProbe: true
+localFile: true
+managedDrivers:
+  - key: sqlite-worker
+    label: SQLite SSH Worker
+    storeVisible: true
+    storeOrder: 48
+traits:
+  diagramSql: true
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: true
+  objectSource: false
+  schemaSearch: true
+  diagram: true
+  tableDataEdit: true
+  tableStructureEdit: true
+  tableImport: true
+  dataTransfer: false
+  sqlFileExecution: true
+  databaseCreate: false
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: true

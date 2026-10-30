@@ -1,0 +1,37 @@
+schemaVersion: 1
+order: 565
+dbType: nebula
+rustVariant: Nebula
+label: NebulaGraph
+runtimeMode: agent
+mcpMode: bridge
+agentKey: nebula
+driverProfiles:
+  - profile: nebula-v3
+    agentKey: nebula
+    label: NebulaGraph 3.x
+    storeVisible: false
+driverStoreVisible: true
+driverStoreOrder: 53
+singleConnectionPool: false
+metadataConnectionScoped: false
+skipTcpProbe: true
+defaultPort: 9669
+supportLevel: browse
+capabilities:
+  queryExecution: false
+  metadataBrowse: false
+  objectBrowser: true
+  objectSource: true
+  schemaSearch: false
+  diagram: true
+  tableDataEdit: false
+  tableStructureEdit: true
+  tableImport: false
+  dataTransfer: false
+  sqlFileExecution: false
+  databaseCreate: true
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: true

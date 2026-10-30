@@ -1,0 +1,29 @@
+schemaVersion: 1
+order: 200
+dbType: milvus
+rustVariant: Milvus
+label: Milvus
+runtimeMode: native
+mcpMode: bridge
+singleConnectionPool: false
+metadataConnectionScoped: false
+skipTcpProbe: true
+defaultPort: 19540
+supportLevel: browse
+capabilities:
+  queryExecution: true
+  metadataBrowse: false
+  objectBrowser: true
+  objectSource: false
+  schemaSearch: false
+  diagram: false
+  tableDataEdit: true
+  tableStructureEdit: false
+  tableImport: false
+  dataTransfer: false
+  sqlFileExecution: false
+  databaseCreate: false
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: true

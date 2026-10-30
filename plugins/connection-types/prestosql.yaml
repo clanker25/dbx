@@ -1,0 +1,34 @@
+schemaVersion: 2
+order: 500
+dbType: prestosql
+compareModes: [schema, data]
+rustVariant: PrestoSql
+label: PrestoSQL
+runtimeMode: external
+mcpMode: bridge
+singleConnectionPool: false
+metadataConnectionScoped: true
+skipTcpProbe: false
+defaultPort: 8080
+traits:
+  schemaAware: true
+  databaseSchemaQualified: false
+  treeSchema: true
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: false
+  objectSource: true
+  schemaSearch: true
+  diagram: true
+  tableDataEdit: true
+  tableStructureEdit: false
+  tableImport: false
+  dataTransfer: false
+  sqlFileExecution: true
+  databaseCreate: false
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: false

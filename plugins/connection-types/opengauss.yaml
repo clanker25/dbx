@@ -1,0 +1,39 @@
+schemaVersion: 0
+order: 420
+dbType: opengauss
+compareModes: [schema, data]
+transferSupportLevel: family-compatible
+transferObjectFamily: postgres
+rustVariant: OpenGauss
+label: openGauss
+dialect: openGauss
+runtimeMode: native
+mcpMode: bridge
+singleConnectionPool: true
+metadataConnectionScoped: false
+skipTcpProbe: false
+defaultPort: 5432
+traits:
+  schemaAware: false
+  treeSchema: true
+  pgVacuum: true
+  pgLikeStructure: true
+  diagramSql: false
+supportLevel: operate
+capabilities:
+  queryExecution: false
+  metadataBrowse: true
+  objectBrowser: true
+  objectSource: false
+  schemaSearch: true
+  diagram: true
+  tableDataEdit: false
+  tableStructureEdit: true
+  tableImport: true
+  dataTransfer: true
+  sqlFileExecution: true
+  databaseCreate: true
+  fieldLineage: false
+  sqlExplain: true
+  userAdmin: false
+  driverManagement: false

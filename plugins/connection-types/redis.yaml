@@ -1,0 +1,29 @@
+schemaVersion: 1
+order: 70
+dbType: redis
+rustVariant: Redis
+label: Redis
+runtimeMode: native
+mcpMode: bridge
+singleConnectionPool: true
+metadataConnectionScoped: false
+skipTcpProbe: false
+defaultPort: 6379
+supportLevel: connect
+capabilities:
+  queryExecution: false
+  metadataBrowse: false
+  objectBrowser: false
+  objectSource: true
+  schemaSearch: false
+  diagram: false
+  tableDataEdit: false
+  tableStructureEdit: false
+  tableImport: false
+  dataTransfer: false
+  sqlFileExecution: false
+  databaseCreate: false
+  fieldLineage: false
+  sqlExplain: true
+  userAdmin: false
+  driverManagement: false

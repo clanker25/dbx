@@ -1,0 +1,36 @@
+schemaVersion: 1
+order: 640
+dbType: oscar
+compareModes: [schema, data]
+rustVariant: Oscar
+label: 神通 OSCAR
+runtimeMode: agent
+mcpMode: bridge
+agentKey: oscar
+driverStoreVisible: false
+driverStoreOrder: 34
+singleConnectionPool: true
+metadataConnectionScoped: false
+skipTcpProbe: true
+defaultPort: 2002
+traits:
+  schemaAware: true
+  treeSchema: true
+supportLevel: browse
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: false
+  objectSource: true
+  schemaSearch: true
+  diagram: true
+  tableDataEdit: true
+  tableStructureEdit: false
+  tableImport: false
+  dataTransfer: true
+  sqlFileExecution: true
+  databaseCreate: false
+  fieldLineage: true
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: true

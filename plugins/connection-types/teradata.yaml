@@ -1,0 +1,36 @@
+schemaVersion: 1
+order: 380
+dbType: teradata
+compareModes: [schema, data]
+rustVariant: Teradata
+label: Teradata
+runtimeMode: agent
+mcpMode: bridge
+agentKey: teradata
+driverStoreVisible: true
+driverStoreOrder: 10
+singleConnectionPool: false
+metadataConnectionScoped: true
+skipTcpProbe: false
+defaultPort: 1025
+traits:
+  schemaAware: true
+  treeSchema: true
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: true
+  objectSource: false
+  schemaSearch: false
+  diagram: false
+  tableDataEdit: true
+  tableStructureEdit: false
+  tableImport: false
+  dataTransfer: false
+  sqlFileExecution: true
+  databaseCreate: true
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: true
+  driverManagement: true

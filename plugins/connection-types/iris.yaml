@@ -1,0 +1,44 @@
+schemaVersion: 1
+order: 750
+dbType: iris
+compareModes: [schema, data]
+transferSupportLevel: best-effort
+rustVariant: Iris
+label: InterSystems IRIS
+dialect: Iris
+runtimeMode: agent
+mcpMode: bridge
+agentKey: iris
+driverProfiles:
+  - profile: cache
+    agentKey: cache
+    label: InterSystems Caché
+    storeVisible: false
+    storeOrder: 50
+driverStoreVisible: true
+driverStoreOrder: 42
+singleConnectionPool: true
+metadataConnectionScoped: false
+skipTcpProbe: true
+defaultPort: 1972
+traits:
+  schemaAware: true
+  treeSchema: false
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: true
+  objectSource: true
+  schemaSearch: true
+  diagram: true
+  tableDataEdit: true
+  tableStructureEdit: true
+  tableImport: false
+  dataTransfer: true
+  sqlFileExecution: false
+  databaseCreate: false
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: true
+  driverManagement: true

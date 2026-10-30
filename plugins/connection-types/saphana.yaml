@@ -1,0 +1,36 @@
+schemaVersion: 0
+order: 380
+dbType: saphana
+compareModes: [schema, data]
+rustVariant: SapHana
+label: SAP HANA
+runtimeMode: agent
+mcpMode: bridge
+agentKey: saphana
+driverStoreVisible: false
+driverStoreOrder: 9
+singleConnectionPool: false
+metadataConnectionScoped: true
+skipTcpProbe: true
+defaultPort: 30014
+traits:
+  schemaAware: true
+  treeSchema: true
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: false
+  objectSource: false
+  schemaSearch: true
+  diagram: true
+  tableDataEdit: false
+  tableStructureEdit: true
+  tableImport: true
+  dataTransfer: true
+  sqlFileExecution: true
+  databaseCreate: true
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: true

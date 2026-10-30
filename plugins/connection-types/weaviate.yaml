@@ -1,0 +1,29 @@
+schemaVersion: 2
+order: 210
+dbType: weaviate
+rustVariant: Weaviate
+label: Weaviate
+runtimeMode: native
+mcpMode: bridge
+singleConnectionPool: false
+metadataConnectionScoped: false
+skipTcpProbe: false
+defaultPort: 8080
+supportLevel: browse
+capabilities:
+  queryExecution: true
+  metadataBrowse: false
+  objectBrowser: true
+  objectSource: false
+  schemaSearch: false
+  diagram: true
+  tableDataEdit: false
+  tableStructureEdit: true
+  tableImport: false
+  dataTransfer: false
+  sqlFileExecution: false
+  databaseCreate: false
+  fieldLineage: true
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: false
