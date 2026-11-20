@@ -1,0 +1,40 @@
+schemaVersion: 1
+order: 320
+dbType: gaussdb
+compareModes: [schema, data]
+transferSupportLevel: family-compatible
+transferObjectFamily: postgres
+rustVariant: Gaussdb
+label: GaussDB
+dialect: GaussDB
+runtimeMode: native
+mcpMode: bridge
+singleConnectionPool: false
+metadataConnectionScoped: true
+skipTcpProbe: false
+defaultPort: 5432
+traits:
+  schemaAware: true
+  clearableQuerySchema: true
+  treeSchema: true
+  pgVacuum: true
+  pgLikeStructure: true
+  diagramSql: true
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: true
+  objectSource: true
+  schemaSearch: true
+  diagram: false
+  tableDataEdit: true
+  tableStructureEdit: true
+  tableImport: true
+  dataTransfer: true
+  sqlFileExecution: true
+  databaseCreate: true
+  fieldLineage: false
+  sqlExplain: true
+  userAdmin: true
+  driverManagement: true

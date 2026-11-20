@@ -1,0 +1,38 @@
+schemaVersion: 2
+order: 670
+dbType: etcd
+rustVariant: Etcd
+label: etcd
+runtimeMode: agent
+mcpMode: bridge
+agentKey: etcd
+driverProfiles:
+  - profile: etcd-v2
+    agentKey: etcd2
+    label: etcd 2.x (v2 API)
+    storeVisible: true
+    storeOrder: 49
+driverStoreVisible: true
+driverStoreOrder: 39
+singleConnectionPool: false
+metadataConnectionScoped: true
+skipTcpProbe: false
+defaultPort: 2379
+supportLevel: connect
+capabilities:
+  queryExecution: false
+  metadataBrowse: false
+  objectBrowser: false
+  objectSource: false
+  schemaSearch: true
+  diagram: false
+  tableDataEdit: false
+  tableStructureEdit: true
+  tableImport: true
+  dataTransfer: true
+  sqlFileExecution: false
+  databaseCreate: false
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: true

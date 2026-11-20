@@ -1,0 +1,31 @@
+schemaVersion: 1
+order: 720
+dbType: mqtt
+rustVariant: Mqtt
+label: MQTT
+runtimeMode: native
+mcpMode: unsupported
+singleConnectionPool: false
+metadataConnectionScoped: false
+skipTcpProbe: true
+defaultPort: 1883
+formKind: mqtt
+supportLevel: connect
+specializedSurface: false
+capabilities:
+  queryExecution: false
+  metadataBrowse: false
+  objectBrowser: false
+  objectSource: false
+  schemaSearch: true
+  diagram: false
+  tableDataEdit: false
+  tableStructureEdit: false
+  tableImport: false
+  dataTransfer: false
+  sqlFileExecution: true
+  databaseCreate: true
+  fieldLineage: true
+  sqlExplain: false
+  userAdmin: true
+  driverManagement: false

@@ -1,0 +1,34 @@
+schemaVersion: 1
+order: 40
+dbType: turso
+compareModes: [schema, data]
+transferSupportLevel: best-effort
+rustVariant: Turso
+label: Turso
+dialect: Turso
+runtimeMode: native
+mcpMode: direct
+singleConnectionPool: false
+metadataConnectionScoped: true
+skipTcpProbe: false
+defaultPort: 443
+traits:
+  diagramSql: true
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: true
+  objectSource: true
+  schemaSearch: false
+  diagram: true
+  tableDataEdit: true
+  tableStructureEdit: true
+  tableImport: true
+  dataTransfer: false
+  sqlFileExecution: true
+  databaseCreate: false
+  fieldLineage: true
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: false

@@ -1,0 +1,39 @@
+schemaVersion: 2
+order: 340
+dbType: kwdb
+compareModes: [schema, data]
+transferSupportLevel: family-compatible
+transferObjectFamily: postgres
+rustVariant: Kwdb
+label: KWDB
+dialect: KwDB
+runtimeMode: native
+mcpMode: direct
+singleConnectionPool: false
+metadataConnectionScoped: false
+skipTcpProbe: false
+defaultPort: 26257
+traits:
+  schemaAware: false
+  treeSchema: false
+  pgVacuum: true
+  pgLikeStructure: true
+  diagramSql: true
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: false
+  objectBrowser: false
+  objectSource: false
+  schemaSearch: true
+  diagram: true
+  tableDataEdit: true
+  tableStructureEdit: true
+  tableImport: true
+  dataTransfer: true
+  sqlFileExecution: true
+  databaseCreate: true
+  fieldLineage: true
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: false

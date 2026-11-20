@@ -1,0 +1,32 @@
+schemaVersion: 1
+order: 80
+dbType: clickhouse
+compareModes: [schema, data]
+transferSupportLevel: best-effort
+rustVariant: ClickHouse
+label: ClickHouse
+dialect: ClickHouse
+runtimeMode: native
+mcpMode: bridge
+singleConnectionPool: false
+metadataConnectionScoped: false
+skipTcpProbe: false
+defaultPort: 8123
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: true
+  objectSource: false
+  schemaSearch: true
+  diagram: true
+  tableDataEdit: false
+  tableStructureEdit: true
+  tableImport: true
+  dataTransfer: true
+  sqlFileExecution: false
+  databaseCreate: true
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: true

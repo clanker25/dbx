@@ -1,0 +1,40 @@
+schemaVersion: 0
+order: 270
+dbType: kingbase
+compareModes: [schema, data]
+transferSupportLevel: family-compatible
+transferObjectFamily: postgres
+rustVariant: Kingbase
+label: 金仓KingbaseES
+dialect: Kingbase
+runtimeMode: agent
+mcpMode: bridge
+agentKey: kingbase
+driverStoreVisible: true
+driverStoreOrder: 2
+singleConnectionPool: false
+metadataConnectionScoped: false
+skipTcpProbe: true
+defaultPort: 54321
+traits:
+  schemaAware: true
+  treeSchema: true
+  pgVacuum: true
+supportLevel: operate
+capabilities:
+  queryExecution: false
+  metadataBrowse: false
+  objectBrowser: true
+  objectSource: true
+  schemaSearch: true
+  diagram: true
+  tableDataEdit: true
+  tableStructureEdit: true
+  tableImport: true
+  dataTransfer: true
+  sqlFileExecution: false
+  databaseCreate: true
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: true
+  driverManagement: false

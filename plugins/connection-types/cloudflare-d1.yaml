@@ -1,0 +1,34 @@
+schemaVersion: 1
+order: 60
+dbType: cloudflare-d1
+compareModes: [schema, data]
+transferSupportLevel: best-effort
+rustVariant: CloudflareD1
+label: Cloudflare D1
+dialect: SQLite
+runtimeMode: native
+mcpMode: bridge
+singleConnectionPool: false
+metadataConnectionScoped: false
+skipTcpProbe: false
+defaultPort: 443
+traits:
+  diagramSql: true
+supportLevel: operate
+capabilities:
+  queryExecution: false
+  metadataBrowse: true
+  objectBrowser: true
+  objectSource: true
+  schemaSearch: true
+  diagram: true
+  tableDataEdit: false
+  tableStructureEdit: false
+  tableImport: true
+  dataTransfer: true
+  sqlFileExecution: true
+  databaseCreate: false
+  fieldLineage: true
+  sqlExplain: false
+  userAdmin: true
+  driverManagement: true

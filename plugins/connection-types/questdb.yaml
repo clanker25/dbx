@@ -1,0 +1,36 @@
+schemaVersion: 1
+order: 430
+dbType: questdb
+compareModes: [schema, data]
+transferSupportLevel: best-effort
+rustVariant: Questdb
+label: QuestDB
+dialect: QuestDB
+runtimeMode: native
+mcpMode: direct
+singleConnectionPool: false
+metadataConnectionScoped: false
+skipTcpProbe: true
+defaultPort: 8812
+traits:
+  singleDatabase: true
+  pgLikeStructure: true
+  diagramSql: true
+supportLevel: operate
+capabilities:
+  queryExecution: false
+  metadataBrowse: true
+  objectBrowser: true
+  objectSource: false
+  schemaSearch: true
+  diagram: false
+  tableDataEdit: false
+  tableStructureEdit: true
+  tableImport: true
+  dataTransfer: true
+  sqlFileExecution: false
+  databaseCreate: false
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: true
+  driverManagement: false

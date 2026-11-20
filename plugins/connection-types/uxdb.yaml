@@ -1,0 +1,38 @@
+schemaVersion: 2
+order: 300
+dbType: uxdb
+compareModes: [schema, data]
+rustVariant: Uxdb
+label: 优炫 UXDB
+dialect: PostgreSQL
+runtimeMode: agent
+mcpMode: bridge
+agentKey: uxdb
+driverStoreVisible: false
+driverStoreOrder: 5
+singleConnectionPool: true
+metadataConnectionScoped: false
+skipTcpProbe: true
+defaultPort: 52024
+traits:
+  schemaAware: true
+  treeSchema: true
+  pgVacuum: true
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: true
+  objectSource: true
+  schemaSearch: true
+  diagram: true
+  tableDataEdit: true
+  tableStructureEdit: true
+  tableImport: false
+  dataTransfer: false
+  sqlFileExecution: true
+  databaseCreate: false
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: true
