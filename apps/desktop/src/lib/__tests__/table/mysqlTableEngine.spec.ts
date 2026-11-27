@@ -1,0 +1,89 @@
+import { describe, expect, it } from "vitest";
+import type { QueryResult } from "@/types/database";
+import { buildObjectBrowserRows } from "@/lib/table/objectBrowserRows";
+import { mysqlTableEngineDraft, mysqlTableEngineSqlOption, mysqlTableEngineSql, mysqlTableEngineChangeSql, parseMysqlTableEngineMetadata, refreshMysqlTableEngineDraft, supportsMysqlTableEngine } from "@/lib/table/mysqlTableEngine";
+
+function result(columns: string[], rows: QueryResult["rows"]): QueryResult {
+  return { columns, rows, affected_rows: 0, execution_time_ms: 1 };
+}
+
+describe("mysqlTableEngine", () => {
+  it("builds mode-independent metadata SQL for quoted and Unicode names", () => {
+    const sql = mysqlTableEngineSql("db'x", "订单\\archive");
+    expect(sql).toContain("TABLE_SCHEMA = CONVERT(X'64622778' USING utf8mb4)");
+    expect(sql).toContain("TABLE_NAME = CONVERT(X'e8aea2e58d955c61726368697665' USING utf8mb4)");
+    expect(sql).not.toContain("db'x");
+  });
+
+  it("keeps supported engines, the server default, and the current table engine", () => {
+    const engines = result(
+      ["Engine", "Support", "Comment"],
+      [
+        ["InnoDB", "DEFAULT", ""],
+        ["MyISAM", "YES", ""],
+        ["FEDERATED", "NO", ""],
+      ],
+    );
+    const table = result(["engine"], [["FEDERATED"]]);
+
+    expect(parseMysqlTableEngineMetadata(engines, table)).toEqual({
+      currentEngine: "FEDERATED",
+      defaultEngine: "InnoDB",
+      engines: ["FEDERATED", "InnoDB", "MyISAM"],
+    });
+  });
+
+  it("uses the default for a new table and preserves a dirty edit across refresh", () => {
+    const initial = { currentEngine: "MyISAM", defaultEngine: "InnoDB", engines: ["InnoDB", "MyISAM"] };
+    expect(mysqlTableEngineDraft(initial, true)).toEqual({ value: "InnoDB", originalValue: "InnoDB" });
+    expect(mysqlTableEngineDraft(initial, false)).toEqual({ value: "MyISAM", originalValue: "MyISAM" });
+
+    expect(refreshMysqlTableEngineDraft({ ...initial, currentEngine: "InnoDB" }, { value: "ARCHIVE", originalValue: "MyISAM" }, false, true)).toEqual({
+      value: "ARCHIVE",
+      originalValue: "InnoDB",
+    });
+  });
+
+  it("sends the selected engine for creates and only changed engines for edits", () => {
+    expect(mysqlTableEngineSqlOption({ value: "InnoDB", originalValue: "InnoDB" }, true, true)).toBe("InnoDB");
+    expect(mysqlTableEngineSqlOption({ value: "innodb", originalValue: "InnoDB" }, false, true)).toBeUndefined();
+    expect(mysqlTableEngineSqlOption({ value: "MyISAM", originalValue: "InnoDB" }, false, true)).toBe("MyISAM");
+    expect(mysqlTableEngineSqlOption({ value: "MyISAM", originalValue: "InnoDB" }, false, false)).toBeUndefined();
+  });
+
+  it("is limited to native MySQL connections", () => {
+    expect(supportsMysqlTableEngine({ db_type: "mysql", driver_profile: "mysql" })).toBe(true);
+    expect(supportsMysqlTableEngine({ db_type: "mysql", driver_profile: undefined })).toBe(true);
+    expect(supportsMysqlTableEngine({ db_type: "jdbc", driver_profile: "mysql" })).toBe(false);
+    expect(supportsMysqlTableEngine({ db_type: "mysql", driver_profile: "goldendb" })).toBe(false);
+  });
+
+  it("builds a quoted ALTER TABLE for the inline engine picker", () => {
+    expect(mysqlTableEngineChangeSql({ database: "app", table: "orders", engine: "InnoDB" })).toBe("ALTER TABLE `app`.`orders` ENGINE = InnoDB");
+    expect(mysqlTableEngineChangeSql({ database: "app", table: "or`ders", engine: " MyISAM " })).toBe("ALTER TABLE `app`.`or``ders` ENGINE = MyISAM");
+    expect(mysqlTableEngineChangeSql({ table: "orders", engine: "InnoDB" })).toBe("ALTER TABLE `orders` ENGINE = InnoDB");
+    // Quoted identifiers keep leading/trailing spaces; trimming is only for the emptiness check.
+    expect(mysqlTableEngineChangeSql({ database: " app ", table: " orders ", engine: "InnoDB" })).toBe("ALTER TABLE ` app `.` orders ` ENGINE = InnoDB");
+    expect(mysqlTableEngineChangeSql({ database: "  ", table: " orders ", engine: "InnoDB" })).toBe("ALTER TABLE ` orders ` ENGINE = InnoDB");
+  });
+
+  it("keeps the raw list-row identifier when the picked engine becomes ALTER TABLE", () => {
+    const [row] = buildObjectBrowserRows({
+      objects: [{ name: " orders ", object_type: "TABLE", schema: " app " }],
+      database: "app",
+      fallbackSchema: "app",
+      databaseType: "mysql",
+    });
+    expect(mysqlTableEngineChangeSql({ database: row.schema, table: row.name, engine: "InnoDB" })).toBe("ALTER TABLE ` app `.` orders ` ENGINE = InnoDB");
+  });
+
+  it("refuses engine values that are not bare engine names or exceed MySQL's length limit", () => {
+    expect(mysqlTableEngineChangeSql({ database: "app", table: "orders", engine: "InnoDB; DROP TABLE x" })).toBeUndefined();
+    expect(mysqlTableEngineChangeSql({ database: "app", table: "orders", engine: "`InnoDB`" })).toBeUndefined();
+    expect(mysqlTableEngineChangeSql({ database: "app", table: "orders", engine: "  " })).toBeUndefined();
+    const maxLengthEngine = "A".repeat(64);
+    expect(mysqlTableEngineChangeSql({ database: "app", table: "orders", engine: maxLengthEngine })).toBe(`ALTER TABLE \`app\`.\`orders\` ENGINE = ${maxLengthEngine}`);
+    expect(mysqlTableEngineChangeSql({ database: "app", table: "orders", engine: `${maxLengthEngine}A` })).toBeUndefined();
+    expect(mysqlTableEngineChangeSql({ database: "app", table: "", engine: "InnoDB" })).toBeUndefined();
+  });
+});

@@ -1,0 +1,39 @@
+schemaVersion: 2
+order: 20
+dbType: postgres
+compareModes: [schema, data]
+transferSupportLevel: verified
+transferObjectFamily: postgres
+rustVariant: Postgres
+label: PostgreSQL
+dialect: PostgreSQL
+runtimeMode: native
+mcpMode: direct
+singleConnectionPool: false
+metadataConnectionScoped: false
+skipTcpProbe: true
+defaultPort: 5432
+traits:
+  schemaAware: true
+  treeSchema: true
+  pgVacuum: false
+  pgLikeStructure: true
+  diagramSql: true
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: false
+  objectSource: true
+  schemaSearch: true
+  diagram: true
+  tableDataEdit: true
+  tableStructureEdit: true
+  tableImport: false
+  dataTransfer: true
+  sqlFileExecution: true
+  databaseCreate: false
+  fieldLineage: true
+  sqlExplain: true
+  userAdmin: true
+  driverManagement: false

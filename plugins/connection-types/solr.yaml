@@ -1,0 +1,29 @@
+schemaVersion: 1
+order: 164
+dbType: solr
+rustVariant: Solr
+label: Apache Solr
+runtimeMode: native
+mcpMode: bridge
+singleConnectionPool: false
+metadataConnectionScoped: true
+skipTcpProbe: true
+defaultPort: 8983
+supportLevel: browse
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: false
+  objectSource: false
+  schemaSearch: false
+  diagram: false
+  tableDataEdit: false
+  tableStructureEdit: false
+  tableImport: false
+  dataTransfer: false
+  sqlFileExecution: false
+  databaseCreate: false
+  fieldLineage: false
+  sqlExplain: true
+  userAdmin: false
+  driverManagement: false

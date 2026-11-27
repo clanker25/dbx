@@ -1,0 +1,29 @@
+schemaVersion: 0
+order: 170
+dbType: hbase
+rustVariant: Hbase
+label: Apache HBase
+runtimeMode: native
+mcpMode: bridge
+singleConnectionPool: true
+metadataConnectionScoped: false
+skipTcpProbe: false
+defaultPort: 8080
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: false
+  objectSource: false
+  schemaSearch: false
+  diagram: false
+  tableDataEdit: false
+  tableStructureEdit: false
+  tableImport: false
+  dataTransfer: false
+  sqlFileExecution: false
+  databaseCreate: true
+  fieldLineage: false
+  sqlExplain: true
+  userAdmin: false
+  driverManagement: false

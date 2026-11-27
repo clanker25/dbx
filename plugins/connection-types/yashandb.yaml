@@ -1,0 +1,38 @@
+schemaVersion: 1
+order: 350
+dbType: yashandb
+compareModes: [schema, data]
+transferSupportLevel: best-effort
+rustVariant: Yashandb
+label: 崖山 YashanDB
+dialect: YashanDB
+runtimeMode: agent
+mcpMode: bridge
+agentKey: yashandb
+driverStoreVisible: false
+driverStoreOrder: 35
+singleConnectionPool: true
+metadataConnectionScoped: true
+skipTcpProbe: true
+defaultPort: 1688
+traits:
+  schemaAware: true
+  treeSchema: false
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: true
+  objectSource: true
+  schemaSearch: true
+  diagram: true
+  tableDataEdit: false
+  tableStructureEdit: true
+  tableImport: true
+  dataTransfer: true
+  sqlFileExecution: true
+  databaseCreate: true
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: true

@@ -1,0 +1,29 @@
+schemaVersion: 1
+order: 150
+dbType: easysearch
+rustVariant: Easysearch
+label: Easysearch
+runtimeMode: native
+mcpMode: bridge
+singleConnectionPool: false
+metadataConnectionScoped: true
+skipTcpProbe: false
+defaultPort: 9100
+supportLevel: connect
+capabilities:
+  queryExecution: false
+  metadataBrowse: false
+  objectBrowser: true
+  objectSource: false
+  schemaSearch: false
+  diagram: false
+  tableDataEdit: false
+  tableStructureEdit: false
+  tableImport: false
+  dataTransfer: false
+  sqlFileExecution: false
+  databaseCreate: false
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: false

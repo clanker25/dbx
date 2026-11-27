@@ -1,0 +1,33 @@
+schemaVersion: 1
+order: 600
+dbType: kylin
+compareModes: [schema, data]
+rustVariant: Kylin
+label: Apache Kylin
+runtimeMode: agent
+mcpMode: bridge
+agentKey: kylin
+driverStoreVisible: false
+driverStoreOrder: 30
+singleConnectionPool: true
+metadataConnectionScoped: false
+skipTcpProbe: true
+defaultPort: 7070
+supportLevel: understand
+capabilities:
+  queryExecution: false
+  metadataBrowse: true
+  objectBrowser: true
+  objectSource: true
+  schemaSearch: true
+  diagram: true
+  tableDataEdit: false
+  tableStructureEdit: true
+  tableImport: false
+  dataTransfer: false
+  sqlFileExecution: true
+  databaseCreate: false
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: true
+  driverManagement: true

